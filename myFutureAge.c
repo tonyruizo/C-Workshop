@@ -15,14 +15,15 @@ int main(void)
   char playAnswer;
   playAgain = true;
 
-  printf("Welcome! Calculate your age by typing it and a future year. Let's begin!\n");
+  printf("Welcome! Calculate your age in a later year! Let's begin!\n");
+  printf("\n");
 
   while (playAgain)
   {
     printf("Type in your current age:\n");
     scanf("%d", &userAge);
 
-    printf("Type in the future year:\n");
+    printf("Type in the year:\n");
     scanf("%d", &futureYear);
 
     printf("Calculating....\n");
@@ -64,6 +65,20 @@ int calculateAge(int age, int year)
   yearDifference = year - currentYear;
   result = age + yearDifference;
 
-  printf("You will be %d years old, in %d.\n", result, year);
+  if (result > 0)
+  {
+    if (year < currentYear)
+    {
+      printf("That's going back in time.. but you were %d years old, in %d.\n", result, year);
+    }
+    else
+    {
+      printf("You will be %d years old, in %d.\n", result, year);
+    }
+  }
+  else
+  {
+    printf("Ok, you were not born yet.\n");
+  }
   return 0;
 }
