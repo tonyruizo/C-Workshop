@@ -21,7 +21,7 @@ int main(void)
 
   // display output
   printf("%d, %d\n", numOfLast, numOfFirst);
-  printf("%s, %s", lastName, firstName);
+  printf("%s, %s\n", lastName, firstName);
 
   return 0;
 }
